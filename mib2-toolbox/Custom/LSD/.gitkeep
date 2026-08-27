@@ -1,0 +1,6 @@
+Place VoiceControlButtonPatch.jar here before installing.
+
+Download it from the GitHub Releases page, or build it yourself with ../../../build.sh
+and copy build/out/VoiceControlButtonPatch.jar into this directory.
+
+The installer aborts if the jar is missing.

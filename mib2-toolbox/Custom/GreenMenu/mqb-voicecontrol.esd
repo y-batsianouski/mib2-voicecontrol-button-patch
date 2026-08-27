@@ -1,0 +1,44 @@
+###########################################################################################
+#
+# Voice Control Button Patch - remaps the steering wheel Voice Control button
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MQBCoding -> Customization -> VoiceControl
+#
+###########################################################################################
+screen  VoiceControl Customization
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Short press = mute / unmute"
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Double press = jump to App-Connect (CarPlay / Android Auto interface)."
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Long press = Voice control / Siri / Google Assistant."
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+
+script
+   value   sys 1 0x0100 "/eso/hmi/engdefs/scripts/mqb/install_voicecontrol_button_patch.sh"
+   label   "Install Voice Control Button Patch"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+
+script
+   value   sys 1 0x0100 "/eso/hmi/engdefs/scripts/mqb/uninstall_voicecontrol_button_patch.sh"
+   label   "Uninstall Voice Control Button Patch"

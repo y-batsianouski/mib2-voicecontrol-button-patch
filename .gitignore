@@ -1,0 +1,11 @@
+# build artefacts
+.bsrc/
+build/
+
+# binaries are never tracked - the jar ships via GitHub Releases, or you build it yourself
+*.jar
+
+# build inputs that are not redistributable (see README)
+toolchain/
+
+.DS_Store
