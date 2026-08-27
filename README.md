@@ -15,6 +15,13 @@ More details about the development are in my drive2.ru blog: [Volkswagen Tiguan 
 | **double press** | jump to App-Connect (CarPlay / Android Auto interface) |
 | **long press** | Built-in voice control / Siri / Google Assistant |
 
+## Installation
+
+Download the latest release, copy it onto your [mib2-toolbox](https://github.com/jilleb/mib2-toolbox)
+SD card, and install it from the Green Menu.
+
+**[Step-by-step guide with screenshots →](docs/INSTALLATION.md)**
+
 ## Compatibility
 
 Developed and tested on a **Discover Pro MHI2_ER_VWG13_K4525_MU1367**.
