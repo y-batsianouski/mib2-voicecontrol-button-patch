@@ -14,7 +14,7 @@ the first testers.**
 The install scripts have been tested, but only on one car. No guarantee can be given yet.
 
 At the time of writing this has only been tested on a Discover Pro running
-**MHI2_ER_VWG13_K4525_MU1367**.
+**MHI2_ER_VWG13_K4525_MU1367** and latest [mib2-toolbox](https://github.com/jilleb/mib2-toolbox) from master.
 
 ---
 
@@ -61,6 +61,11 @@ Alongside all the usual mib2-toolbox files, the card should now also contain:
 - `Custom/GreenMenu/scripts/mqb/install_voicecontrol_button_patch.sh`
 - `Custom/GreenMenu/scripts/mqb/uninstall_voicecontrol_button_patch.sh`
 
+For previous versions of mib2-toolbox it may be need to unpack install/unistall scripts without `mqb` subfolder:
+
+- `Custom/GreenMenu/scripts/install_voicecontrol_button_patch.sh`
+- `Custom/GreenMenu/scripts/uninstall_voicecontrol_button_patch.sh`
+
 ![SD card contents](assets/installation/02-sdcard-contents.jpg)
 
 ### 2.1. macOS users
@@ -69,8 +74,17 @@ If you are on a Mac, run this before ejecting the card, to strip the metadata fi
 across removable media:
 
 ```sh
+# check your SDCARDNAME
 ls /Volumes
-cd /Volumes/{SDCARDNAME} && rm -rf System\ Volume\ Information && dot_clean -m . && rm -rf .fseventsd && rm -rf .Trashes && rm -rf .Spotlight-V100 && find . -type f -name ".DS_Store" -print && cd -
+# Clean SD card from MacOS system files
+cd /Volumes/{SDCARDNAME} \
+  && rm -rf System\ Volume\ Information \
+  && dot_clean -m . \
+  && rm -rf .fseventsd \
+  && rm -rf .Trashes \
+  && rm -rf .Spotlight-V100 \
+  && find . -type f -name ".DS_Store" -print \
+  && cd -
 ```
 
 ### 3. Install the green-menu screens
